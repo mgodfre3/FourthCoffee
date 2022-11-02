@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualProcessorCount": {
+            "value": 0 // TODO: Fill in parameter value
+        },
+        "memoryGB": {
+            "value": 0 // TODO: Fill in parameter value
+        },
+        "maximumMemoryGB": {
+            "value": 0
+        },
+        "minimumMemoryGB": {
+            "value": 0
+        },
+        "dynamicMemoryConfig": {
+            "value": false
+        },
+        "targetMemoryBuffer": {
+            "value": 0
+        },
+        "networkInterfaceTags": {
+            "value": {}
+        },
+        "virtualMachineTags": {
+            "value": {}
+        },
+        "location": {
+            "value": "" // TODO: Fill in parameter value
+        },
+        "customLocationId": {
+            "value": "" // TODO: Fill in parameter value
+        },
+        "domainAdministratorUsername": {
+            "value": "" // TODO: Fill in parameter value
+        },
+        "domainAdministratorPassword": {
+            "value": "" // TODO: Fill in parameter value
+        },
+        "vmAdministratorAccountUsername": {
+            "value": ""
+        },
+        "vmAdministratorAccountPassword": {
+            "value": ""
+        },
+        "virtualNetworkId": {
+            "value": "" // TODO: Fill in parameter value
+        },
+        "imageId": {
+            "value": "" // TODO: Fill in parameter value
+        },
+        "oUPath": {
+            "value": ""
+        },
+        "domain": {
+            "value": ""
+        },
+        "fileUri": {
+            "value": ""
+        },
+        "fileName": {
+            "value": ""
+        }
+    }
+}
