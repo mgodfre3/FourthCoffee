@@ -1,0 +1,65 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "nvr_name": {
+            "value": "cb-nvr"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "customLocationId": {
+            "value": "/subscriptions/0c6c3a0d-0866-4e68-939d-ef81ca6f802e/resourceGroups/Roastery-aks/providers/Microsoft.ExtendedLocation/customLocations/Roastery-HQCL"
+        },
+        "hardwareProfile": {
+            "value": {
+                "processors": 4,
+                "memoryGB": 8
+            }
+        },
+        "subscriptionId": {
+            "value": "0c6c3a0d-0866-4e68-939d-ef81ca6f802e"
+        },
+        "resourceGroupName": {
+            "value": "s1010-iaas"
+        },
+        "osType": {
+            "value": "Windows"
+        },
+        "adminUsername": {
+            "value": "AzureAdmin"
+        },
+        "resourceTags": {
+            "value": {
+                "Function": "SecApp",
+                "Store": "1010"
+            }
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "marketplaceimage_ref":{
+            "value": "/subscriptions/0c6c3a0d-0866-4e68-939d-ef81ca6f802e/resourceGroups/RoasteryHQCL-rg/providers/microsoft.azurestackhci/marketplaceGalleryImages/Server2022-AE"
+        },
+        "NVR_nic_name":{
+            "value": "nvr-nic0"
+        },
+        "Custom_vnet_name":{
+            "value": "/subscriptions/0c6c3a0d-0866-4e68-939d-ef81ca6f802e/resourcegroups/roastery-aks/providers/microsoft.azurestackhci/virtualnetworks/default-vnet"
+        },
+        "secapp_name": {
+            "value": "cb-SecApp"
+        },
+        "secapp_resourceTags": {
+            "value": {
+                "Function": "SecApp",
+                "Store": "1010"
+            }
+        },
+        "secapp_nic_name":{
+            "value": "secapp-nic0"
+        }
+       
+    }
+
+}

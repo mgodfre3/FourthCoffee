@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "vvl-test-v1"
+        },
+        "location": {
+            "value": "eastus2euap"
+        },
+        "customLocationId": {
+            "value": "/subscriptions/3127e2af-c391-46d9-9699-4bdb12c29012/resourceGroups/kyle_zhang_resource_group/providers/Microsoft.ExtendedLocation/customLocations/AszArcVM2NdClus-cl"
+        },
+        "hardwareProfile": {
+            "value": {
+                "processors": 4,
+                "memoryGB": 8
+            }
+        },
+        "subscriptionId": {
+            "value": "3127e2af-c391-46d9-9699-4bdb12c29012"
+        },
+        "resourceGroupName": {
+            "value": "vlakshmanan"
+        },
+        "osType": {
+            "value": "Windows"
+        },
+        "adminUsername": {
+            "value": "Admin"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "fileUris": {
+            "value": "https://19h1storage.blob.core.windows.net/bootdiagnostics-19h1kubwi-a796f22e-cad9-404d-a004-b544055c8699/helloworld.ps1?sp=r&se=2022-11-02T07:27:54Z&sv=2021-06-08&sr=b&sig=S%2BZk%2FmPBwW%2FdZlQVdw7neAlUi8yQiZS0heP%2BLYnQpu0%3D"
+        },
+        "date": {
+            "value": "20221102T164439Z"
+        },
+        "arguments": {
+            "value": null
+        },
+        "resourceProviderAndType": {
+            "value": "Microsoft.AzureStackHCI/virtualmachines"
+        },
+        "apiVersion": {
+            "value": "2021-09-01-preview"
+        }
+    }
+}
