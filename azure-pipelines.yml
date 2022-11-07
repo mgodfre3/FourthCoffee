@@ -26,6 +26,8 @@ stages:
         command: build
         buildContext: '$(Build.SourcesDirectory)/POS/fourthcoffee_pos/fourthcoffee_pos'
         dockerfile: '$(Build.SourcesDirectory)/POS/fourthcoffee_pos/fourthcoffee_pos/Dockerfile'
+        repository: contosoapps
+        containerRegistry: pamir
         tags: |
           $(tag)
     - task: Docker@2
