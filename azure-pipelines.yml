@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'pami-docker-reg'
-        repository: 'contosoapps'
+        repository: 'pamir/contosoapps'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         buildContext: '$(Build.SourcesDirectory)/POS/fourthcoffee_pos/fourthcoffee_pos'
