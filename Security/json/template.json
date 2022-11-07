@@ -71,6 +71,9 @@
         },
          "nvr_customimage":{
             "type": "string"
+        },
+        "NVR_nic_name": {
+            "type": "string"
         }
     },
     "variables": {
@@ -152,7 +155,18 @@
                 "storageProfile": {
                     "imageReference": {
                         "name": "[parameters('nvr_customimage')]"
-                    }
+                    },
+                    "dataDisks": [
+                        {
+                            "name": "[resourceid('Microsoft.AzureStackHCI/virtualharddisks','Data1')]"
+                        },
+                        {
+                            "name": "[resourceid('Microsoft.AzureStackHCI/virtualharddisks','Data2')]"
+                        },
+                        {
+                            "name": "[resourceid('Microsoft.AzureStackHCI/virtualharddisks','Data3')]"
+                        }
+                    ]
                 },
                 "networkProfile": {
                     "networkInterfaces": [
@@ -160,7 +174,61 @@
                             "id": "[resourceid('Microsoft.AzureStackHCI/networkinterfaces',parameters('nvr_virtualnic_name'))]"
                         }
                     ]
-                }
+                },
+                 "dependsOn": [
+                "Microsoft.AzureStackHCI/virtualharddisks/Data1",
+                "Microsoft.AzureStackHCI/virtualharddisks/Data2",
+                "Microsoft.AzureStackHCI/virtualharddisks/Data3",
+                "Microsoft.AzureStackHCI/networkinterfaces/nic0"
+            ],
+            "identity": {
+                "type": "SystemAssigned"
+            }
+            }
+        },
+        {
+            "name": "Data1",
+            "apiVersion": "2021-09-01-preview",
+            "type": "Microsoft.AzureStackHCI/virtualharddisks",
+            "location": "[parameters('location')]",
+            "extendedLocation": {
+                "type": "CustomLocation",
+                "name": "[parameters('customLocationId')]"
+            },
+            "properties": {
+                "diskSizeBytes": 500,
+                "dynamic": true,
+                "resourceName": "Date1"
+            }
+        },
+        {
+            "name": "Data2",
+            "apiVersion": "2021-09-01-preview",
+            "type": "Microsoft.AzureStackHCI/virtualharddisks",
+            "location": "[parameters('location')]",
+            "extendedLocation": {
+                "type": "CustomLocation",
+                "name": "[parameters('customLocationId')]"
+            },
+            "properties": {
+                "diskSizeBytes": 500,
+                "dynamic": true,
+                "resourceName": "Data2"
+            }
+        },
+        {
+            "name": "Data3",
+            "apiVersion": "2021-09-01-preview",
+            "type": "Microsoft.AzureStackHCI/virtualharddisks",
+            "location": "[parameters('location')]",
+            "extendedLocation": {
+                "type": "CustomLocation",
+                "name": "[parameters('customLocationId')]"
+            },
+            "properties": {
+                "diskSizeBytes": 500,
+                "dynamic": true,
+                "resourceName": "Data3"
             }
         },
         //APP VM Nic Interface
@@ -213,7 +281,7 @@
                 ]
             }
         },
-        //Applicaiton Server Extensions
+        //Application Server Extensions
         {
             "type": "Microsoft.AzureStackHCI/virtualMachines/extensions",
             "apiVersion": "2021-09-01-preview",
@@ -244,7 +312,8 @@
                 "typeHandlerVersion": "1.5",
                 "autoUpgradeMinorVersion": true
             }
-        },
+        }
+        /*
         //SecApp DEployment
         {
             "type": "Microsoft.Resources/deployments",
@@ -279,7 +348,8 @@
                     ]
                 }
             }
-        }
+        },
+        
         //NVR Deployment
         {
             "type": "Microsoft.Resources/deployments",
@@ -315,5 +385,6 @@
                 }
             }
         }
+        */
     ]
 }

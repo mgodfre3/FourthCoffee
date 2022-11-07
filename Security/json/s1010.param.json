@@ -9,7 +9,7 @@
             "value": "eastus"
         },
         "customLocationId": {
-            "value": "/subscriptions/0c6c3a0d-0866-4e68-939d-ef81ca6f802e/resourceGroups/Roastery-aks/providers/Microsoft.ExtendedLocation/customLocations/Roastery-HQCL"
+            "value": "/subscriptions/0c6c3a0d-0866-4e68-939d-ef81ca6f802e/resourceGroups/s1010-aks/providers/Microsoft.ExtendedLocation/customLocations/s1010CL"
         },
         "hardwareProfile": {
             "value": {
@@ -39,13 +39,13 @@
             "value": null
         },
         "marketplaceimage_ref":{
-            "value": "/subscriptions/0c6c3a0d-0866-4e68-939d-ef81ca6f802e/resourceGroups/RoasteryHQCL-rg/providers/microsoft.azurestackhci/marketplaceGalleryImages/Server2022-AE"
+            "value": "/subscriptions/0c6c3a0d-0866-4e68-939d-ef81ca6f802e/resourceGroups/S1010CL-rg/providers/microsoft.azurestackhci/marketplacegalleryimages/Server2022AE"
         },
         "NVR_nic_name":{
             "value": "nvr-nic0"
         },
         "Custom_vnet_name":{
-            "value": "/subscriptions/0c6c3a0d-0866-4e68-939d-ef81ca6f802e/resourcegroups/roastery-aks/providers/microsoft.azurestackhci/virtualnetworks/default-vnet"
+            "value": "/subscriptions/0c6c3a0d-0866-4e68-939d-ef81ca6f802e/resourceGroups/s1010-aks/providers/Microsoft.AzureStackHCI/virtualnetworks/default-vnet"
         },
         "secapp_name": {
             "value": "cb-SecApp"
@@ -56,7 +56,7 @@
                 "Store": "1010"
             }
         },
-        "secapp_nic_name":{
+        "secapp-nic-name":{
             "value": "secapp-nic0"
         }
        

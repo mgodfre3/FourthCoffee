@@ -47,7 +47,7 @@
         "secapp_resourceTags":{
             "type": "object"
         },
-        "secapp_nic_name":{
+        "secapp-nic-name":{
             "type": "string"
         }
     },
@@ -164,7 +164,7 @@
                 "name": "[parameters('customLocationId')]"
             },
             "properties": {
-                "resourceName": "[parameters('nvr_name')]",
+                "resourceName": "[parameters('NVR_nic_name')]",
                 "ipConfigurations": [
                     {
                         "name": "[parameters('NVR_nic_name')]",
@@ -198,13 +198,13 @@
                 },
                 "storageProfile": {
                     "imageReference": {
-                        "name": "parameters('marketplaceimage_ref')"
+                        "name": "[parameters('marketplaceimage_ref')]"
                     }
                 },
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceid('Microsoft.AzureStackHCI/networkinterfaces',parameters('secapp_nic_name'))]"
+                            "id": "[resourceid('Microsoft.AzureStackHCI/networkinterfaces',parameters('secapp-nic-name'))]"
                         }
                     ]
                 }
@@ -214,7 +214,7 @@
                 "name": "[parameters('customLocationId')]"
             },
             "dependsOn": [
-                "Microsoft.AzureStackHCI/networkinterfaces/parameters('secapp_nic_name')"
+                "[resourceid('Microsoft.AzureStackHCI/networkinterfaces',parameters('secapp-nic-name'))]"
             ],
             "identity": {
                 "type": "SystemAssigned"
@@ -222,7 +222,7 @@
         },
         {
             "apiVersion": "2021-09-01-preview",
-            "name": "parameters('secapp_nic_name')",
+            "name": "[parameters('secapp-nic-name')]",
             "type": "Microsoft.AzureStackHCI/networkinterfaces",
             "location": "[parameters('location')]",
             "extendedLocation": {
@@ -230,14 +230,14 @@
                 "name": "[parameters('customLocationId')]"
             },
             "properties": {
-                "resourceName": "parameters('secapp_nic_name')",
+                "resourceName": "[parameters('secapp-nic-name')]",
                 "ipConfigurations": [
                     {
-                        "name": "parameters('secapp_nic_name')",
+                        "name":"[parameters('secapp-nic-name')]",
                         "properties": {
                             "privateIPAllocationMethod": "Dynamic",
                             "subnet": {
-                                "id": "parameters('Custom_vnet_name')"
+                                "id": "[parameters('Custom_vnet_name')]"
                             }
                         }
                     }
