@@ -6,6 +6,7 @@ metadata:
   namespace: contosopos
   labels:
     app: contosopos
+    env: dev
 spec:
   selector:
     app: contosopos
