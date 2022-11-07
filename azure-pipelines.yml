@@ -21,15 +21,8 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        buildContext: '$(Build.SourcesDirectory)/POS/fourthcoffee_pos/fourthcoffee_pos'
-        dockerfile: '$(Build.SourcesDirectory)/POS/fourthcoffee_pos/fourthcoffee_pos/Dockerfile'
-        tags: |
-          pamir/contosoapps:$(tag)
-    - task: Docker@2
       inputs:
         containerRegistry: 'pami-docker-reg'
         repository: 'contosoapps'
-        command: 'push'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
