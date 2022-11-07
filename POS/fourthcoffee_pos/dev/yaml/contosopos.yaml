@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: contosopos
-          image: mgodfre3/contosoapps:3
+          image: mgodfre3/contosoapps:6
           env:
             - name: SQL_HOST
               value: ""
