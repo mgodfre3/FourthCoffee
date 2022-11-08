@@ -14,7 +14,7 @@ spec:
   - name: http
     port: 80
     targetPort: 5000
-  type: ClusterIP
+  type: LoadBalancer
 ---  
 # Create Contoso Supermarket Deployment
 apiVersion: apps/v1
