@@ -18,7 +18,7 @@ def index():
     if os.environ.get('HEAD_TITLE'):
         head_title = os.environ.get('HEAD_TITLE')
 
-    holiday_season = True
+    holiday_season = False
     if os.environ.get('NEW_CATEGORY'):
         holiday_season = os.environ.get('NEW_CATEGORY') == 'True'
 
