@@ -53,7 +53,7 @@ spec:
             - name: CAMERAS_BASEURL
               value: ""
             - name: NEW_CATEGORY
-              value:"false"
+              value:"true"
           ports:
             - containerPort: 5000
         - name: contosocameras
